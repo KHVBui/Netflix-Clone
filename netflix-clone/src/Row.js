@@ -29,6 +29,7 @@ function Row({ title, fetchUrl }) {
 
         {movies.map(movie => (
           <img
+            key={movie.id} // re-renders individual movies instead of whole row
             className="row__poster"
             src={`${base_url}${movie.poster_path}`}
             alt={movie.name}
