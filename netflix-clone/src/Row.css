@@ -2,9 +2,10 @@
   display: flex;
   overflow-y: hidden;
   overflow-x: scroll;
-  padding: 20px;
+  padding: 20px; /* Gives space for the hover effect */
 }
 
+/*Hide the scroll bars*/
 .row__posters::-webkit-scrollbar {
   display: none;
 }
@@ -13,8 +14,8 @@
   object-fit: contain;
   width: 100%;
   max-height: 100px;
-  margin-right: 10px;
-  transition: transform 250ms;
+  margin-right: 10px; /*M akes space between images */
+  transition: transform 250ms; /* Makes the hover effect gradual */
 }
 
 .row__poster:hover {
