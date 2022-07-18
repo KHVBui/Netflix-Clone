@@ -5,4 +5,4 @@ const instance = axios.create({
   baseURL: "https://api.themoviedb.org/3",
 });
 
-export default instance;
+export default instance; // default allows us to name it to anything in other files
