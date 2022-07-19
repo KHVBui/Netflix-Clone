@@ -1,28 +1,32 @@
+html {
+  font-size: 62.5%;
+}
+
 .banner {
   color: white;
   object-fit: contain;
-  height: 448px;
+  height: 46rem;
 }
 
 .banner__contents {
-  margin-left: 30px;
-  padding-top: 140px;
-  height: 190px;
+  margin-left: 3rem;
+  padding-top: 14rem;
+  height: 19rem;
 }
 
 .banner__title {
-  font-size: 3rem;
+  font-size: 5rem;
   font-weight: 800;
   padding-bottom: 0.3rem;
 }
 
 .banner__description {
   width: 45rem;
-  line-height: 1.3rem;
+  line-height: 1.6rem;
   padding-top: 1rem;
-  font-size: 0.8rem;
-  max-width: 360px;
-  height: 80px;
+  font-size: 1.4rem;
+  max-width: 36rem;
+  height: 8rem;
 }
 
 .banner__button {
@@ -30,6 +34,7 @@
   color: #fff;
   outline: none;
   border: none;
+  font-size: 1.7rem;
   font-weight: 700;
   border-radius: 0.2vw;
   padding-left: 2rem;
