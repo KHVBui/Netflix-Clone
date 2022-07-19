@@ -11,7 +11,7 @@ html {
 .banner__contents {
   margin-left: 3rem;
   padding-top: 14rem;
-  height: 19rem;
+  height: 25rem;
 }
 
 .banner__title {
@@ -49,4 +49,14 @@ html {
   color: #000;
   background-color: #e6e6e6;
   transition: all 0.2s;
+}
+
+.banner--fadeBottom {
+  height: 7rem;
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgba(37, 37, 37, 0.61),
+    #111
+  );
 }
