@@ -4,7 +4,9 @@ import "./Row.css";
 import Youtube from "react-youtube";
 import movieTrailer from "movie-trailer";
 
-const base_url = "https://image.tmdb.org/t/p/original/";
+const base_url = "https://image.tmdb.org/t/p/";
+const backdrop_size = "w300";
+const poster_size = "w185";
 
 function Row({ title, fetchUrl, isLargeRow }) {
   const [movies, setMovies] = useState([]);
@@ -59,6 +61,8 @@ function Row({ title, fetchUrl, isLargeRow }) {
             onClick={() => handleClick(movie)}
             className={`row__poster ${isLargeRow && "row__posterLarge"}`}
             src={`${base_url}${
+              isLargeRow ? poster_size : backdrop_size
+            }${
               isLargeRow ? movie.poster_path : movie.backdrop_path
             }`}
             alt={movie.name}
