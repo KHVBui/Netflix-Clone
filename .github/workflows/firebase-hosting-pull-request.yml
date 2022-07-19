@@ -18,3 +18,4 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NETFLIX_CLONE_F6A30 }}'
           projectId: netflix-clone-f6a30
+          entryPoint: "./netflix-clone" 
