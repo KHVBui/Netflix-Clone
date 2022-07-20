@@ -65,6 +65,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
             }${
               isLargeRow ? movie.poster_path : movie.backdrop_path
             }`}
+            loading={isLargeRow ? "eager" : "lazy"}
             alt={movie.name}
           />  
         ))} 
