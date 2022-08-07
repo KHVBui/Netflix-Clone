@@ -15,13 +15,13 @@ function Row({ title, fetchUrl, isLargeRow }) {
   // A snippet of code which runs based on a specific condition/variable
   useEffect(() => {
     // if [], run once when the row loads, and don't run again
-
     // Have to format async function like this in useEffect
     async function fetchData() {
       const request = await axios.get(fetchUrl);
       setMovies(request.data.results);
       return request;
     }
+
     fetchData();
   }, [fetchUrl]);
 
@@ -56,6 +56,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
         {/* several row__poster(s) */}
 
         {movies.map(movie => (
+          (movie.backdrop_path !== null) ?
           <img
             key={movie.id} // re-renders individual movies instead of whole row
             onClick={() => handleClick(movie)}
@@ -67,7 +68,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
             }`}
             loading={isLargeRow ? "eager" : "lazy"}
             alt={movie.name}
-          />  
+          /> : null
         ))} 
       </div>
       {trailerUrl && <Youtube videoId={trailerUrl} opts={opts} />}
