@@ -14,7 +14,6 @@ function Row({ title, fetchUrl, isLargeRow }) {
 
   // A snippet of code which runs based on a specific condition/variable
   useEffect(() => {
-    // if [], run once when the row loads, and don't run again
     // Have to format async function like this in useEffect
     async function fetchData() {
       const request = await axios.get(fetchUrl);
