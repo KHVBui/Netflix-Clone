@@ -1,5 +1,5 @@
 import axios from "axios";
-import rateLimit from "axios-rate-limit"
+import rateLimit from "axios-rate-limit";
 import axiosRetry from 'axios-retry';
 
  /** base url to make requests to the movie database */
