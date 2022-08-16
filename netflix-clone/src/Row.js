@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import movieTrailer from "movie-trailer";
+import React, { useEffect, useState } from 'react';
+import Youtube from "react-youtube";
 import axios from './axios';
 import "./Row.css";
-import Youtube from "react-youtube";
-import movieTrailer from "movie-trailer";
 
 const base_url = "https://image.tmdb.org/t/p/";
 const backdrop_size = "w300";
@@ -49,7 +49,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
 
   return (
     <div className="row">
-       <h2>{title}</h2>
+      <h2>{title}</h2>
       
       <div className="row__posters">
         {/* several row__poster(s) */}
