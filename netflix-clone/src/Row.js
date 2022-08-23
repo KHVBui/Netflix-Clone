@@ -18,14 +18,13 @@ function Row({ title, fetchUrl, isLargeRow }) {
 		async function fetchData() {
 			try {
 				const request = await axios.get(fetchUrl);
-				console.log(title);
+				console.log(fetchUrl);
 				console.log(request.data);
 
 				setMovies(request.data.results);
 				return request;
 			}
 			catch (error) {
-				console.log("This is an error");
 				console.log(error);
 			}
 		}
