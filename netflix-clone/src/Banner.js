@@ -7,15 +7,23 @@ function Banner() {
   const [movie, setMovie] = useState([]);
 
   useEffect(() => {
-    async function fetchData() {
-      const request = await axios.get(requests.fetchNetflixOriginals);
-      
-      // Obtain one random Netflix original to be the banner
-      setMovie(  
-        request.data.results[
-          Math.floor(Math.random() * request.data.results.length - 1)
-        ]
-      );
+		async function fetchData() {
+			try {
+				const request = await axios.get(requests.fetchTrending);
+				console.log("Banner");
+				console.log(request.data);
+
+				// Obtain one random Netflix original to be the banner
+				setMovie(  
+					request.data.results[
+						Math.floor(Math.random() * request.data.results.length - 1)
+					]
+				);
+			}
+			catch (error) {
+				console.log("This is an error");
+				console.log(error);
+			}
     }
     fetchData();
   }, []);
