@@ -14,12 +14,21 @@ function Row({ title, fetchUrl, isLargeRow }) {
 
   // A snippet of code which runs based on a specific condition/variable
   useEffect(() => {
-    // Have to format async function like this in useEffect
-    async function fetchData() {
-      const request = await axios.get(fetchUrl);
-      setMovies(request.data.results);
-      return request;
-    }
+			// Have to format async function like this in useEffect
+		async function fetchData() {
+			try {
+				const request = await axios.get(fetchUrl);
+				console.log(title);
+				console.log(request.data);
+
+				setMovies(request.data.results);
+				return request;
+			}
+			catch (error) {
+				console.log("This is an error");
+				console.log(error);
+			}
+		}
 
     fetchData();
   }, [fetchUrl]);
