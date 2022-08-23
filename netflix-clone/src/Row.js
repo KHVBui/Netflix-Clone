@@ -18,9 +18,6 @@ function Row({ title, fetchUrl, isLargeRow }) {
 		async function fetchData() {
 			try {
 				const request = await axios.get(fetchUrl);
-				console.log(fetchUrl);
-				console.log(request.data);
-
 				setMovies(request.data.results);
 				return request;
 			}
@@ -78,6 +75,14 @@ function Row({ title, fetchUrl, isLargeRow }) {
 						style={isLargeRow ?
 							{height: '25rem', width: '17rem'} :
 							{height: '10rem', width: '18rem'}}
+						onError={({currentTarget}) => {setTimeout(() => {
+							currentTarget.src=`${base_url}${
+								isLargeRow ? poster_size : backdrop_size
+							}${
+								isLargeRow ? movie.poster_path : movie.backdrop_path
+							}`}
+							, 1000
+						)}}
           /> : null
         ))} 
       </div>
