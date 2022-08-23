@@ -1,25 +1,36 @@
 import axios from "axios";
-import rateLimit from "axios-rate-limit";
-import axiosRetry from 'axios-retry';
+import * as axiosRetry from 'retry-axios';
+// import rateLimit from "axios-rate-limit";
 
  /** base url to make requests to the movie database */
-const instance = rateLimit(axios.create({
-  baseURL: "https://api.themoviedb.org/3",
-  }), 
-  {
-    maxRequests: 50,
-    perMilliseconds: 1000
+const axiosInstance = axios.create({
+  baseURL: "https://api.themoviedb.org/3"
   }
 );
 
 // Retries the API call if there are failed requests 
-axiosRetry(instance, { 
-  retries: 3, 
-  retryDelay: (retryCount) => {
-    console.log(`retry attempt: ${retryCount}`);
-    return retryCount * 2000;
-  },
-  retryCondition: axiosRetry.isRetryableError
-});
+axiosInstance.defaults.retryConfig = {
+	retryConfig: {
+		retry: 5, // number of retries when facing 4xx or 5xx
+		noResponseRetries: 5, // number of retry when facing connection error
+		instance: axiosInstance,
+		onRetryAttempt: err => {
+			const cfg = axiosRetry.getConfig(err);
+			console.log(`Retry attempt #${cfg.currentRetryAttempt}`);
+		}
+	},
+	timeout: 50 // milliseconds
+}
 
-export default instance; // default allows us to name it to anything in other files
+axiosRetry.attach(axiosInstance);
+
+//  const instance = rateLimit(axios.create({
+//   baseURL: "https://api.themoviedb.org/3"
+//   }), 
+//   {
+//     maxRequests: 45,
+//     perMilliseconds: 1100
+//   }
+// );
+
+export default axiosInstance; // default allows us to name it to anything in other files
