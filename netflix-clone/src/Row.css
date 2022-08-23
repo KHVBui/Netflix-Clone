@@ -22,8 +22,6 @@ html {
 
 .row__poster {
   object-fit: contain;
-  width: 18rem;
-  height: 10rem;
   margin-right: 1.1rem; /* Makes space between images */
   transition: transform 250ms; /* Makes the hover effect gradual */
 }
@@ -31,11 +29,6 @@ html {
 .row__poster:hover {
   transform: scale(1.08);
   opacity: 1;
-}
-
-.row__posterLarge {
-  height: 25rem;
-  width: 17rem;
 }
 
 .row__posterLarge:hover {
