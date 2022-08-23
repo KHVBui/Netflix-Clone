@@ -10,18 +10,13 @@ function Banner() {
 		async function fetchData() {
 			try {
 				const request = await axios.get(requests.fetchTrending);
-				console.log("Banner");
-				console.log(request.data);
 
 				// Obtain one random Netflix original to be the banner
 				setMovie(  
-					request.data.results[
-						Math.floor(Math.random() * request.data.results.length - 1)
-					]
+					request.data.results[Math.floor(Math.random() * request.data.results.length)]
 				);
 			}
 			catch (error) {
-				console.log("This is an error");
 				console.log(error);
 			}
     }
@@ -39,11 +34,23 @@ function Banner() {
       style={{
         backgroundSize: "cover",
         backgroundImage: `url(
-          "https://image.tmdb.org/t/p/original/${movie?.backdrop_path}"
+          "https://image.tmdb.org/t/p/w1280${movie?.backdrop_path}"
         )`,
-        backgroundPosition: "center center",
+        backgroundPosition: "top center",
       }} 
     >
+			<img 
+				src={`https://image.tmdb.org/t/p/w1280${movie?.backdrop_path}`}
+				style={{display: 'none'}}
+				alt="banner"
+				onError={({currentTarget}) => {setTimeout(() => {
+					currentTarget.backgroundImage=`url(
+						"https://image.tmdb.org/t/p/w1280${movie?.backdrop_path}"
+					)`}
+					, 1000
+				)}}
+			/>
+			
       <div className="banner__contents"> {/* Text for banner */}
         {/* title */}
         <h1 className="banner__title">
