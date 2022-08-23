@@ -75,6 +75,9 @@ function Row({ title, fetchUrl, isLargeRow }) {
             }`}
             loading={isLargeRow ? "eager" : "lazy"}
             alt={movie.name}
+						style={isLargeRow ?
+							{height: '25rem', width: '17rem'} :
+							{height: '10rem', width: '18rem'}}
           /> : null
         ))} 
       </div>
