@@ -1,8 +1,8 @@
 import movieTrailer from "movie-trailer";
 import { useEffect, useState } from "react";
 import Youtube from "react-youtube";
+import "../styles/Row.module.css";
 import axios from "./axios";
-import "./Row.module.css";
 
 const base_url = "https://image.tmdb.org/t/p/";
 const backdrop_size = "w300";
@@ -22,6 +22,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
 				return request;
 			} catch (error) {
 				console.log(error);
+				return error;
 			}
 		}
 
