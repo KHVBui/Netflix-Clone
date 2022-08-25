@@ -1,0 +1,72 @@
+{
+	"env": {
+		"browser": true,
+		"node": true,
+		"es2021": true
+	},
+	"extends": [
+		"airbnb",
+		"airbnb-typescript",
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+		"plugin:prettier/recommended",
+		"plugin:@next/next/recommended"
+	],
+	"parserOptions": {
+		"project": "./tsconfig.json",
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
+	"plugins": [
+		"react", 
+		"react-hooks",
+		"jsx-a11y", 
+		"prettier", 
+		"import",
+		"@typescript-eslint",
+		"@next/next"
+	],
+	"rules": {
+		"indent": "off",
+		"no-console": "off",
+		"no-unused-vars": "warn",
+		"no-empty-function": "error",
+		"no-underscore-dangle": "off",
+		"no-unused-expressions": "error",
+		"prettier/prettier": "error",
+		"arrow-body-style": "off",
+		"prefer-arrow-callback": "off",
+		"jsx-a11y/anchor-is-valid": [
+			"error",
+			{
+				"components": ["Link"],
+				"specialLink": ["onClick", "to"],
+				"aspects": ["noHref"]
+			}
+		],
+		"jsx-a11y/click-events-have-key-events": "off",
+		"jsx-a11y/interactive-supports-focus": "warn",
+		"react/button-has-type": "warn",
+		"react/jsx-uses-react": "off",
+		"react/jsx-filename-extension": "off",
+		"react/react-in-jsx-scope": "off",
+		"react/jsx-props-no-spreading": "warn",
+		"react/jsx-key": "off",
+		"react/prop-types": "off",
+		"no-shadow": "off",
+		"no-use-before-define": "warn",
+		"spaced-comment": [
+			"error",
+			"always",
+			{
+				"exceptions": ["-", "*"]
+			}
+		]
+	}
+}
