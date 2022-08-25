@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.module.css";
 import App from "./_app";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
