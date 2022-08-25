@@ -1,4 +1,5 @@
 # Netflix-Clone
+
 Site live and available at: https://netflix-clone-f6a30.web.app/
 
 A clone of the Netflix website made using React JS, the TMDB API, and hosted on Firebase. Includes a featured movie banner, navigation bar, and scrolling carousel of movie posters.
