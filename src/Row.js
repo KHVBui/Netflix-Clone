@@ -1,7 +1,7 @@
 import movieTrailer from "movie-trailer";
 import { useEffect, useState } from "react";
 import Youtube from "react-youtube";
-import "../styles/Row.module.css";
+import styles from "../styles/Row.module.css";
 import axios from "./axios";
 
 const base_url = "https://image.tmdb.org/t/p/";
@@ -55,10 +55,10 @@ function Row({ title, fetchUrl, isLargeRow }) {
 	};
 
 	return (
-		<div className="row">
+		<div className={styles.row}>
 			<h2>{title}</h2>
 
-			<div className="row__posters">
+			<div className={styles.row__posters}>
 				{/* several row__poster(s) */}
 
 				{movies.map(movie =>
@@ -66,7 +66,9 @@ function Row({ title, fetchUrl, isLargeRow }) {
 						<img
 							key={movie.id} // re-renders individual movies instead of whole row
 							onClick={() => handleClick(movie)}
-							className={`row__poster ${isLargeRow && "row__posterLarge"}`}
+							className={`${styles.row__poster} ${
+								isLargeRow && styles.row__posterLarge
+							}`}
 							src={`${base_url}${isLargeRow ? poster_size : backdrop_size}${
 								isLargeRow ? movie.poster_path : movie.backdrop_path
 							}`}
