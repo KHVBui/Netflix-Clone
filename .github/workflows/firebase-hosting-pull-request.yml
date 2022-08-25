@@ -10,10 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: npm ci && npm run build
-        working-directory: ./netflix-clone
+        working-directory: ./
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NETFLIX_CLONE_F6A30 }}'
           projectId: netflix-clone-f6a30
-          entryPoint: "./netflix-clone" 
+          entryPoint: "./" 
