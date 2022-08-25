@@ -1,8 +1,8 @@
 import movieTrailer from "movie-trailer";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Youtube from "react-youtube";
 import axios from "./axios";
-import "./Row.css";
+import "./Row.module.css";
 
 const base_url = "https://image.tmdb.org/t/p/";
 const backdrop_size = "w300";
