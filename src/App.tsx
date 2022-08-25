@@ -1,5 +1,4 @@
-import React from "react";
-import "./App.css";
+import "./App.module.css";
 import Banner from "./Banner";
 import Nav from "./Nav";
 import requests from "./requests";
