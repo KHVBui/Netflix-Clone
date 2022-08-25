@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 .app {
+	font-size: 62.5%;
 	margin: 0;
 	background-color: #111;
+}
+
+body {
+	font-size: 1.6em;
 }
