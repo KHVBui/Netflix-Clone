@@ -8,6 +8,7 @@
 		"airbnb",
 		"airbnb-typescript",
 		"eslint:recommended",
+		"plugin:import/recommended",
 		"plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -33,6 +34,14 @@
 		"@typescript-eslint",
 		"@next/next"
 	],
+	"settings": {
+		"import/resolver": {
+      "typescript": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+				"moduleDirectory": ["node_modules", "src/"]
+      }
+    }
+	},
 	"rules": {
 		"indent": "off",
 		"no-console": "off",
