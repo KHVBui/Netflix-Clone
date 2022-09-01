@@ -63,31 +63,32 @@ function Row({ title, fetchUrl, isLargeRow }) {
 
 				{movies.map(movie =>
 					movie.backdrop_path !== null ? (
-						<img
-							key={movie.id} // re-renders individual movies instead of whole row
-							onClick={() => handleClick(movie)}
-							className={`${styles.row__poster} ${
-								isLargeRow && styles.row__posterLarge
-							}`}
-							src={`${BASE_URL}${isLargeRow ? POSTER_SIZE : BACKDROP_SIZE}${
-								isLargeRow ? movie.poster_path : movie.backdrop_path
-							}`}
-							loading={isLargeRow ? "eager" : "lazy"}
-							alt={movie.name}
-							style={
-								isLargeRow
-									? { height: "25rem", width: "17rem" }
-									: { height: "10rem", width: "18rem" }
-							}
-							onError={({ currentTarget }) => {
-								setTimeout(() => {
-									const imageTarget = currentTarget;
-									imageTarget.src = `${BASE_URL}${
-										isLargeRow ? POSTER_SIZE : BACKDROP_SIZE
-									}${isLargeRow ? movie.poster_path : movie.backdrop_path}`;
-								}, 1000);
-							}}
-						/>
+						<div role="button" onClick={() => handleClick(movie)} tabIndex="0">
+							<img
+								key={movie.id} // re-renders individual movies instead of whole row
+								className={`${styles.row__poster} ${
+									isLargeRow && styles.row__posterLarge
+								}`}
+								src={`${BASE_URL}${isLargeRow ? POSTER_SIZE : BACKDROP_SIZE}${
+									isLargeRow ? movie.poster_path : movie.backdrop_path
+								}`}
+								loading={isLargeRow ? "eager" : "lazy"}
+								alt={movie.name}
+								style={
+									isLargeRow
+										? { height: "25rem", width: "17rem" }
+										: { height: "10rem", width: "18rem" }
+								}
+								onError={({ currentTarget }) => {
+									setTimeout(() => {
+										const imageTarget = currentTarget;
+										imageTarget.src = `${BASE_URL}${
+											isLargeRow ? POSTER_SIZE : BACKDROP_SIZE
+										}${isLargeRow ? movie.poster_path : movie.backdrop_path}`;
+									}, 1000);
+								}}
+							/>
+						</div>
 					) : null,
 				)}
 			</div>
