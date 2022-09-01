@@ -46,7 +46,8 @@ function Banner() {
 				alt="banner"
 				onError={({ currentTarget }) => {
 					setTimeout(() => {
-						currentTarget.backgroundImage = `url(
+						const imageTarget = currentTarget;
+						imageTarget.backgroundImage = `url(
 						"https://image.tmdb.org/t/p/w1280${movie?.backdrop_path}"
 					)`;
 					}, 1000);

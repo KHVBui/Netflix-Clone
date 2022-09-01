@@ -81,7 +81,8 @@ function Row({ title, fetchUrl, isLargeRow }) {
 							}
 							onError={({ currentTarget }) => {
 								setTimeout(() => {
-									currentTarget.src = `${BASE_URL}${
+									const imageTarget = currentTarget;
+									imageTarget.src = `${BASE_URL}${
 										isLargeRow ? POSTER_SIZE : BACKDROP_SIZE
 									}${isLargeRow ? movie.poster_path : movie.backdrop_path}`;
 								}, 1000);
