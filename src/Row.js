@@ -4,9 +4,9 @@ import Youtube from "react-youtube";
 import styles from "../styles/Row.module.css";
 import axios from "./axios";
 
-const base_url = "https://image.tmdb.org/t/p/";
-const backdrop_size = "w300";
-const poster_size = "w185";
+const BASE_URL = "https://image.tmdb.org/t/p/";
+const BACKDROP_SIZE = "w300";
+const POSTER_SIZE = "w185";
 
 function Row({ title, fetchUrl, isLargeRow }) {
 	const [movies, setMovies] = useState([]);
@@ -69,7 +69,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
 							className={`${styles.row__poster} ${
 								isLargeRow && styles.row__posterLarge
 							}`}
-							src={`${base_url}${isLargeRow ? poster_size : backdrop_size}${
+							src={`${BASE_URL}${isLargeRow ? POSTER_SIZE : BACKDROP_SIZE}${
 								isLargeRow ? movie.poster_path : movie.backdrop_path
 							}`}
 							loading={isLargeRow ? "eager" : "lazy"}
@@ -81,8 +81,8 @@ function Row({ title, fetchUrl, isLargeRow }) {
 							}
 							onError={({ currentTarget }) => {
 								setTimeout(() => {
-									currentTarget.src = `${base_url}${
-										isLargeRow ? poster_size : backdrop_size
+									currentTarget.src = `${BASE_URL}${
+										isLargeRow ? POSTER_SIZE : BACKDROP_SIZE
 									}${isLargeRow ? movie.poster_path : movie.backdrop_path}`;
 								}, 1000);
 							}}
