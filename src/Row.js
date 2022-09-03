@@ -1,4 +1,5 @@
 import movieTrailer from "movie-trailer";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import Youtube from "react-youtube";
 import styles from "../styles/Row.module.css";
@@ -64,7 +65,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
 				{movies.map(movie =>
 					movie.backdrop_path !== null ? (
 						<div role="button" onClick={() => handleClick(movie)} tabIndex="0">
-							<img
+							<Image
 								key={movie.id} // re-renders individual movies instead of whole row
 								className={`${styles.row__poster} ${
 									isLargeRow && styles.row__posterLarge
@@ -72,7 +73,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
 								src={`${BASE_URL}${isLargeRow ? POSTER_SIZE : BACKDROP_SIZE}${
 									isLargeRow ? movie.poster_path : movie.backdrop_path
 								}`}
-								loading={isLargeRow ? "eager" : "lazy"}
+								priority={isLargeRow ? "true" : "false"}
 								alt={movie.name}
 								style={
 									isLargeRow
@@ -85,7 +86,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
 										imageTarget.src = `${BASE_URL}${
 											isLargeRow ? POSTER_SIZE : BACKDROP_SIZE
 										}${isLargeRow ? movie.poster_path : movie.backdrop_path}`;
-									}, 1000);
+									}, 1000); // tries to reload the image if there's an error
 								}}
 							/>
 						</div>
