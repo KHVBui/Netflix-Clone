@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/future/image";
 import { useEffect, useState } from "react";
 import styles from "../styles/Banner.module.css";
 import axios from "./axios";
@@ -45,6 +45,8 @@ function Banner() {
 				src={`https://image.tmdb.org/t/p/w1280${movie?.backdrop_path}`}
 				style={{ display: "none" }}
 				alt="banner"
+				width="1280"
+				height="720"
 				priority="true"
 				onError={({ currentTarget }) => {
 					setTimeout(() => {
