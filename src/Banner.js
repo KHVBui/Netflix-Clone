@@ -65,8 +65,12 @@ function Banner() {
 				</h1>
 				{/* div > 2 buttons */}
 				<div className={styles.banner__buttons}>
-					<button className={styles.banner__button}>Play</button>
-					<button className={styles.banner__button}>My List</button>
+					<button className={styles.banner__button} type="button">
+						Play
+					</button>
+					<button className={styles.banner__button} type="button">
+						My List
+					</button>
 				</div>
 				{/* description */}
 				<h1 className={styles.banner__description} x>
