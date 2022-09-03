@@ -15,6 +15,7 @@
 		"react-dom": "^18.2.0",
 		"react-youtube": "^9.0.3",
 		"retry-axios": "^3.0.0",
+		"sharp": "^0.30.7",
 		"web-vitals": "^2.1.4"
 	},
 	"devDependencies": {
