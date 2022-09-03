@@ -64,22 +64,24 @@ function Row({ title, fetchUrl, isLargeRow }) {
 
 				{movies.map(movie =>
 					movie.backdrop_path !== null ? (
-						<div role="button" onClick={() => handleClick(movie)} tabIndex="0">
+						<div
+							className={`${styles.row__poster} ${
+								isLargeRow && styles.row__posterLarge
+							}`}
+							role="button"
+							onClick={() => handleClick(movie)}
+							tabIndex="0"
+							key={movie.id} // re-renders individual movies instead of whole row
+						>
 							<Image
-								key={movie.id} // re-renders individual movies instead of whole row
-								className={`${styles.row__poster} ${
-									isLargeRow && styles.row__posterLarge
-								}`}
 								src={`${BASE_URL}${isLargeRow ? POSTER_SIZE : BACKDROP_SIZE}${
 									isLargeRow ? movie.poster_path : movie.backdrop_path
 								}`}
 								priority={isLargeRow ? "true" : "false"}
 								alt={movie.name}
-								style={
-									isLargeRow
-										? { height: "25rem", width: "17rem" }
-										: { height: "10rem", width: "18rem" }
-								}
+								layout="fixed"
+								width={isLargeRow ? "170" : "180"}
+								height={isLargeRow ? "250" : "100"}
 								onError={({ currentTarget }) => {
 									setTimeout(() => {
 										const imageTarget = currentTarget;
