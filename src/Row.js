@@ -73,6 +73,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
 							tabIndex="0"
 							key={movie.id} // re-renders individual movies instead of whole row
 						>
+							<link rel="dns-prefetch" href="https://image.tmdb.org" />
 							<Image
 								src={`${BASE_URL}${isLargeRow ? POSTER_SIZE : BACKDROP_SIZE}${
 									isLargeRow ? movie.poster_path : movie.backdrop_path
@@ -81,7 +82,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
 								alt={movie.name}
 								layout="fixed"
 								width={isLargeRow ? "170" : "180"}
-								height={isLargeRow ? "250" : "100"}
+								height={isLargeRow ? "255" : "100"}
 								onError={({ currentTarget }) => {
 									setTimeout(() => {
 										const imageTarget = currentTarget;
