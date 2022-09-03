@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "../styles/Banner.module.css";
 import axios from "./axios";
@@ -40,10 +41,11 @@ function Banner() {
 				backgroundPosition: "top center",
 			}}
 		>
-			<img
+			<Image
 				src={`https://image.tmdb.org/t/p/w1280${movie?.backdrop_path}`}
 				style={{ display: "none" }}
 				alt="banner"
+				priority="true"
 				onError={({ currentTarget }) => {
 					setTimeout(() => {
 						const imageTarget = currentTarget;
