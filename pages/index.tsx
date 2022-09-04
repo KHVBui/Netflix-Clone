@@ -1,12 +1,13 @@
+import type { NextPage } from "next";
 import Head from "next/head";
 import Header from "../components/Header";
 // import Banner from "../src/Banner";
 // import requests from "../src/requests";
 // import Row from "../src/Row";
 
-function Home() {
+const Home: NextPage = () => {
 	return (
-		<div>
+		<div className="relative h-screen">
 			<Head>
 				<title>Home - Netflix</title>
 				<link rel="icon" href="/favicon.ico" />
@@ -26,6 +27,6 @@ function Home() {
 			</main>
 		</div>
 	);
-}
+};
 
 export default Home;
