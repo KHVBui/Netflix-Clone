@@ -1,8 +1,8 @@
 import Head from "next/head";
-import Banner from "../src/Banner";
-import Nav from "../src/Nav";
-import requests from "../src/requests";
-import Row from "../src/Row";
+import Header from "../components/Header";
+// import Banner from "../src/Banner";
+// import requests from "../src/requests";
+// import Row from "../src/Row";
 
 function Home() {
 	return (
@@ -11,9 +11,9 @@ function Home() {
 				<title>Home - Netflix</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<div className="app">
-				<Nav />
-				<Banner />
+			<Header />
+			<main className="app">
+				{/* <Banner />
 				<link rel="dns-prefetch" href="https://api.themoviedb.org" />
 				<Row title="TOP RATED" fetchUrl={requests.fetchTopRated} isLargeRow />
 				<Row title="Trending Now" fetchUrl={requests.fetchTrending} />
@@ -22,8 +22,8 @@ function Home() {
 				<Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
 				<Row title="Romance Movies " fetchUrl={requests.fetchRomanceMovies} />
 				<Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
-				<Row title="Family Movies" fetchUrl={requests.fetchFamilyMovies} />
-			</div>
+				<Row title="Family Movies" fetchUrl={requests.fetchFamilyMovies} /> */}
+			</main>
 		</div>
 	);
 }
