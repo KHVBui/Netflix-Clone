@@ -1,7 +1,7 @@
 import Head from "next/head";
+import Banner from "../components/Banner";
 import Header from "../components/Header";
 import { Movie } from "../types";
-// import Banner from "../src/Banner";
 import requests from "../utils/requests";
 // import Row from "../src/Row";
 
@@ -35,9 +35,9 @@ const Home = ({
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Header />
-			<main className="app">
-				{/* <Banner />
-				<link rel="dns-prefetch" href="https://api.themoviedb.org" />
+			<main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-16">
+				<Banner netflixOriginals={netflixOriginals} />
+				{/* <link rel="dns-prefetch" href="https://api.themoviedb.org" />
 				<Row title="TOP RATED" fetchUrl={requests.fetchTopRated} isLargeRow />
 				<Row title="Trending Now" fetchUrl={requests.fetchTrending} />
 				<Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
