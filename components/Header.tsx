@@ -40,7 +40,7 @@ function Header() {
 				</ul>
 			</div>
 
-			<div className="flex items-center space-x-4 test-sm font-light">
+			<div className="test-sm flex items-center space-x-4 font-light">
 				<MagnifyingGlassIcon className="hidden h-6 w-6 sm:inline" />
 				<p className="hidden lg:inline">Kids</p>
 				<BellIcon className="h-6 w-6" />
