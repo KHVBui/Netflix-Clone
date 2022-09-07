@@ -7,17 +7,13 @@
 		"@types/node": "^18.7.13",
 		"@types/react": "^18.0.17",
 		"@types/react-dom": "^18.0.6",
-		"axios": "^0.27.2",
-		"axios-rate-limit": "^1.3.0",
-		"movie-trailer": "^2.1.0",
 		"next": "^12.2.5",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-icons": "^4.4.0",
 		"react-youtube": "^9.0.3",
-		"retry-axios": "^3.0.0",
 		"sharp": "^0.30.7",
-		"web-vitals": "^2.1.4"
+		"tailwind-scrollbar-hide": "^1.1.7"
 	},
 	"devDependencies": {
 		"@next/eslint-plugin-next": "^12.2.5",
@@ -42,6 +38,8 @@
 		"prettier": "^2.7.1",
 		"prettier-eslint": "^15.0.1",
 		"prettier-eslint-cli": "^6.0.1",
+		"prettier-plugin-tailwindcss": "^0.1.13",
+		"tailwind-scrollbar": "^2.0.1",
 		"tailwindcss": "^3.1.8",
 		"tailwindcss-textshadow": "^2.1.3",
 		"typescript": "^4.7.4"

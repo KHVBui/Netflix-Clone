@@ -25,7 +25,7 @@ function Banner({ netflixOriginals }: Props) {
 			lg:h-[65vh] lg:justify-end lg:pb-12"
 		>
 			{/* Banner image */}
-			<div className="absolute top=0 left-0 -z-10 h-[95vh] w-screen">
+			<div className="absolute top-0 left-0 -z-10 h-[95vh] w-screen">
 				<Image
 					src={`${baseUrl}${movie?.backdrop_path || movie?.poster_path}`}
 					alt="banner"
