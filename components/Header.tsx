@@ -1,10 +1,11 @@
 import { BellIcon, MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import Image from "next/future/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
+import useAuth from "../hooks/useAuth";
 
 function Header() {
 	const [isScrolled, setIsScrolled] = useState(false);
+	const { logout } = useAuth();
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -44,15 +45,16 @@ function Header() {
 				<MagnifyingGlassIcon className="hidden h-6 w-6 sm:inline" />
 				<p className="hidden lg:inline">Kids</p>
 				<BellIcon className="h-6 w-6" />
-				<Link href="/account">
-					<Image
-						src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/366be133850498.56ba69ac36858.png"
-						alt="Avatar Image"
-						className="cursor-pointer rounded"
-						width={30}
-						height={30}
-					/>
-				</Link>
+				{/* <Link href="/account"> */}
+				<Image
+					src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/366be133850498.56ba69ac36858.png"
+					alt="Avatar Image"
+					className="cursor-pointer rounded"
+					width={30}
+					height={30}
+					onClick={logout}
+				/>
+				{/* </Link> */}
 			</div>
 
 			{/* <div className={styles["Header--fadeTop"]} /> */}
