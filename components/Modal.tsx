@@ -136,7 +136,7 @@ function Modal() {
 						<div className="flex items-center space-x-2 text-sm">
 							{/* TODO: Implement match % based on user. Currently based on movie rating */}
 							<p className="font-semibold text-green-400">
-								{(movie?.vote_average ?? 0) % 10}% Match{" "}
+								{((movie?.vote_average ?? 0) * 10).toFixed(2)}% Match{" "}
 							</p>
 
 							{/* Release Date */}
