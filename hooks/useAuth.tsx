@@ -3,7 +3,7 @@ import {
 	onAuthStateChanged,
 	signInWithEmailAndPassword,
 	signOut,
-	User
+	User,
 } from "firebase/auth";
 
 import { useRouter } from "next/router";
