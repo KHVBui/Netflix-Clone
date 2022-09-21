@@ -42,9 +42,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 	useEffect(
 		() =>
 			onAuthStateChanged(auth, currentUser => {
-				if (user) {
+				if (currentUser) {
 					// Logged in...
-					setUser(user);
+					setUser(currentUser);
 					setLoading(false);
 				} else {
 					// Not logged in...
