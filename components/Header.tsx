@@ -3,6 +3,7 @@ import Image from "next/future/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import useAuth from "../hooks/useAuth";
+import BasicMenu from "./BasicMenu";
 
 function Header() {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -33,6 +34,9 @@ function Header() {
 					width={100}
 					height={100}
 				/>
+
+				<BasicMenu />
+
 				<ul className="hidden space-x-4 md:flex">
 					<li className="headerLink">Home</li>
 					<li className="headerLink">TV Shows</li>
